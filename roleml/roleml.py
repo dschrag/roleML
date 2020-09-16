@@ -49,7 +49,7 @@ def predict(match, timeline, cassiopeia_dicts=False) -> dict:
         A dictionary mapping participantId to the role defined by _role_format
     """
 
-    if match["gameDuration"] < 720:
+    if match["duration"].seconds < 720:
         raise exceptions.MatchTooShort
     if not match["mapId"] == 11:
         raise exceptions.IncorrectMap
